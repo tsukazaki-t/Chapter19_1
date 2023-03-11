@@ -13,6 +13,9 @@ public class Chapter19_2 {
 		// try-with-resourcesを使用
 				try (FileReader fr = new FileReader("C:\\eclipse\\pleiades\\workspace\\test.txt")) {
 					int c;
+					
+					//int read()メソッドはファイルの終端になって読み込むべきデータがない場合、
+					//-1を返します。これを判定してループを抜けるようにします。
 					while ((c = fr.read()) != -1) {
 						System.out.print(c);
 					}
